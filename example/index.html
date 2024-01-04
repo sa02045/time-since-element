@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>outside-click-element Demo</title>
+  </head>
+  <body>
+    <script type="module" src="../dist/bundle.js"></script>
+    <button>Click me</button>
+    <outside-click>
+      <div style="background-color: bisque">
+        it's inside the outside-click element. Click outside of this box to
+        close it.
+      </div>
+    </outside-click>
+    <script>
+      const button = document.querySelector('button');
+      const outsideClick = document.querySelector('outside-click');
+
+      outsideClick.addEventListener('outside-click', () => {
+        alert('outside-click event fired');
+      });
+    </script>
+  </body>
+</html>
