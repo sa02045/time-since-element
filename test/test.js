@@ -1,6 +1,6 @@
 import { assert } from '@open-wc/testing';
 import { OutsideClickElement } from '../src/index.ts';
-import sinon from 'sinon';
+import { spy } from 'sinon';
 
 describe('OutsideClickElement', () => {
   it('should be defined', () => {
@@ -9,32 +9,32 @@ describe('OutsideClickElement', () => {
   });
 
   it('should be trigger "outside-click" event when click outside', async () => {
-    const spy = sinon.spy();
-    const el = new OutsideClickElement();
+    const sinonSpy = spy();
+    const outsideClickEL = document.createElement('outside-click');
     const outsideEl = document.createElement('div');
 
-    document.body.appendChild(el);
+    document.body.appendChild(outsideClickEL);
     document.body.appendChild(outsideEl);
 
-    el.addEventListener('outside-click', spy);
+    outsideClickEL.addEventListener('outside-click', sinonSpy);
 
     outsideEl.click();
 
-    assert.isTrue(spy.calledOnce);
+    assert.isTrue(sinonSpy.calledOnce);
   });
 
   it('should not be trigger "outside-click" event when click inside', async () => {
-    const spy = sinon.spy();
-    const el = new OutsideClickElement();
+    const sinonSpy = spy();
+    const outsideClickEL = new OutsideClickElement();
     const inside = document.createElement('div');
 
-    el.appendChild(inside);
-    document.body.appendChild(el);
+    outsideClickEL.appendChild(inside);
+    document.body.appendChild(outsideClickEL);
 
-    el.addEventListener('outside-click', spy);
+    outsideClickEL.addEventListener('outside-click', sinonSpy);
 
     inside.click();
 
-    assert.isFalse(spy.calledOnce);
+    assert.isFalse(sinonSpy.calledOnce);
   });
 });
