@@ -1,0 +1,40 @@
+{
+  "name": "outside-click-element",
+  "version": "1.0.0",
+  "description": "A simple utility to detect clicks outside of an element",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "index.css",
+    "index.d.ts"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./define": "./dist/index.js",
+    "./outside-click": "./dist/outside-click-element.js",
+    "./outside-click/define": "./dist/outside-click-element-define.js"
+  },
+  "scripts": {
+    "bundle": "esbuild --bundle dist/index.js --keep-names --outfile=dist/bundle.js --format=esm",
+    "build": "tsc && npm run bundle && npm run manifest",
+    "test": "web-test-runner"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "@open-wc/testing": "^4.0.0",
+    "@web/dev-server-esbuild": "^1.0.1",
+    "@web/test-runner": "^0.18.0",
+    "@web/test-runner-playwright": "^0.11.0",
+    "esbuild": "^0.19.11",
+    "playwright": "^1.40.1",
+    "sinon": "^17.0.1",
+    "typescript": "^5.3.3"
+  },
+  "customElements": "custom-elements.json"
+}
