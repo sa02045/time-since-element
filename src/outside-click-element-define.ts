@@ -1,4 +1,4 @@
-import { OutsideClickElement } from './outside-click-element';
+import { OutsideClickElement } from './outside-click-element.js';
 
 const root = (
   typeof globalThis !== 'undefined' ? globalThis : window
@@ -29,4 +29,4 @@ declare global {
 }
 
 export default OutsideClickElement;
-export * from './outside-click-element';
+export * from './outside-click-element.js';
