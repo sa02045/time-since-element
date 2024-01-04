@@ -1,7 +1,7 @@
-import { OutsideClickElement } from "./outside-click-element";
+import { OutsideClickElement } from './outside-click-element';
 
 const root = (
-  typeof globalThis !== "undefined" ? globalThis : window
+  typeof globalThis !== 'undefined' ? globalThis : window
 ) as typeof window;
 
 try {
@@ -11,7 +11,7 @@ try {
     !(
       root.DOMException &&
       e instanceof DOMException &&
-      e.name === "NotSupportedError"
+      e.name === 'NotSupportedError'
     ) &&
     !(e instanceof ReferenceError)
   ) {
@@ -24,9 +24,9 @@ declare global {
     OutsideClickElement: typeof OutsideClickElement;
   }
   interface HTMLElementTagNameMap {
-    "outside-click": OutsideClickElement;
+    'outside-click': OutsideClickElement;
   }
 }
 
 export default OutsideClickElement;
-export * from "./outside-click-element";
+export * from './outside-click-element';

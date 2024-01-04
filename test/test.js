@@ -1,9 +1,9 @@
-import { assert } from "@open-wc/testing";
-import { OutsideClickElement } from "../src/index.ts";
-import sinon from "sinon";
+import { assert } from '@open-wc/testing';
+import { OutsideClickElement } from '../src/index.ts';
+import sinon from 'sinon';
 
-describe("OutsideClickElement", () => {
-  it("should be defined", () => {
+describe('OutsideClickElement', () => {
+  it('should be defined', () => {
     const el = new OutsideClickElement();
     assert.instanceOf(el, OutsideClickElement);
   });
@@ -11,12 +11,12 @@ describe("OutsideClickElement", () => {
   it('should be trigger "outside-click" event when click outside', async () => {
     const spy = sinon.spy();
     const el = new OutsideClickElement();
-    const outsideEl = document.createElement("div");
+    const outsideEl = document.createElement('div');
 
     document.body.appendChild(el);
     document.body.appendChild(outsideEl);
 
-    el.addEventListener("outside-click", spy);
+    el.addEventListener('outside-click', spy);
 
     outsideEl.click();
 
@@ -26,12 +26,12 @@ describe("OutsideClickElement", () => {
   it('should not be trigger "outside-click" event when click inside', async () => {
     const spy = sinon.spy();
     const el = new OutsideClickElement();
-    const inside = document.createElement("div");
+    const inside = document.createElement('div');
 
     el.appendChild(inside);
     document.body.appendChild(el);
 
-    el.addEventListener("outside-click", spy);
+    el.addEventListener('outside-click', spy);
 
     inside.click();
 

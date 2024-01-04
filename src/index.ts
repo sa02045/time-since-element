@@ -1,6 +1,6 @@
-import { OutsideClickElement } from "./outside-click-element";
+import { OutsideClickElement } from './outside-click-element.js';
 
 export { OutsideClickElement };
 export default OutsideClickElement;
 
-export * from "./outside-click-element-define.js";
+export * from './outside-click-element-define.js';
