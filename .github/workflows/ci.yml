@@ -12,9 +12,11 @@ jobs:
           node-version: 20.x
       - name: npm install
         run: npm install
-      - name: npm run build
-        run: npm run build
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: npm run test
         run: npm run test
+      - name: npm run build
+        run: npm run build
         env:
           CI: true
