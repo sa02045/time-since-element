@@ -18,9 +18,14 @@
     "./outside-click/define": "./dist/outside-click-element-define.js"
   },
   "scripts": {
+    "clean": "rm -rf dist",
+    "lint": "eslint . --ext .js,.ts && tsc --noEmit",
+    "lint:fix": "npm run lint -- --fix",
+    "prebuild": "npm run clean && npm run lint && mkdir dist",
     "bundle": "esbuild --bundle dist/index.js --keep-names --outfile=dist/bundle.js --format=esm",
-    "build": "npm run bundle && npm run manifest",
-    "test": "web-test-runner"
+    "build": "tsc && npm run bundle && npm run manifest",
+    "test": "web-test-runner",
+    "manifest": "custom-elements-manifest analyze"
   },
   "keywords": [
     "web-components",
@@ -38,6 +43,7 @@
     "esbuild": "^0.19.11",
     "eslint": "^8.56.0",
     "eslint-plugin-custom-elements": "^0.0.8",
+    "eslint-plugin-github": "^4.10.1",
     "playwright": "^1.40.1",
     "prettier": "^3.1.1",
     "sinon": "^17.0.1",
