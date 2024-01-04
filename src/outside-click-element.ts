@@ -4,36 +4,26 @@ export class OutsideClickElement extends HTMLElement {
     return this;
   }
 
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
-  }
-
   connectedCallback() {
-    document.addEventListener('click', this.handleOutsideClick);
+    if (!this.shadowRoot) {
+      this.attachShadow({ mode: 'open' });
+      const style = document.createElement('style');
+      style.textContent = `:host {display: block;}`;
+      this.shadowRoot!.append(style, document.createElement('slot'));
+    }
+
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
   }
 
   disconnectedCallback() {
-    document.removeEventListener('click', this.handleOutsideClick);
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
   }
 
-  handleOutsideClick(event: any) {
-    if (!this.contains(event.target)) {
-      this.dispatchEvent(new CustomEvent('outside-click'));
+  handleOutsideClick(event: MouseEvent) {
+    if (event.composedPath().find((node) => node === this)) {
+      return;
     }
-  }
 
-  render() {
-    if (this.shadowRoot) {
-      this.shadowRoot.innerHTML = `
-        <style>
-          :host {
-            display: block;
-          }
-        </style>
-        <slot></slot>
-      `;
-    }
+    this.dispatchEvent(new Event('outside-click'));
   }
 }
