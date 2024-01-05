@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "dist/bundle.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "OutsideClickElement",
+          "default": "class extends HTMLElement {\n  static"
+        },
+        {
+          "kind": "variable",
+          "name": "dist_default",
+          "default": "OutsideClickElement"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutsideClickElement",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "dist/bundle.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "dist_default",
+            "module": "dist/bundle.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutsideClickElement",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./outside-click-element-define.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/outside-click-element-define.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "dist/outside-click-element-define.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./outside-click-element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dist/outside-click-element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OutsideClickElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "define",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "tag",
+                  "default": "'outside-click'"
+                },
+                {
+                  "name": "registry",
+                  "default": "customElements"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOutsideClick",
+              "parameters": [
+                {
+                  "name": "event"
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "outside-click",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutsideClickElement",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "dist/outside-click-element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutsideClickElement",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "src/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "src/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./outside-click-element-define.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/outside-click-element-define.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "src/outside-click-element-define.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./outside-click-element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/outside-click-element.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OutsideClickElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "define",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "tag",
+                  "default": "'outside-click'"
+                },
+                {
+                  "name": "registry",
+                  "default": "customElements"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleOutsideClick",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "name": "outside-click",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OutsideClickElement",
+          "declaration": {
+            "name": "OutsideClickElement",
+            "module": "src/outside-click-element.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "test/test.js",
+      "declarations": [],
+      "exports": []
+    }
+  ]
+}
