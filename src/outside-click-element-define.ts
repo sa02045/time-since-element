@@ -4,9 +4,10 @@ const root = (
   typeof globalThis !== 'undefined' ? globalThis : window
 ) as typeof window;
 
-type JSXBase = JSX.IntrinsicElements extends { span: unknown }
+type JSXBase = JSX.IntrinsicElements extends { div: unknown }
   ? JSX.IntrinsicElements
   : Record<string, Record<string, unknown>>;
+
 declare global {
   interface Window {
     OutsideClickElement: typeof OutsideClickElement;
