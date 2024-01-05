@@ -1,6 +1,6 @@
 {
   "name": "outside-click-element",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple utility to detect clicks outside of an element",
   "main": "dist/index.js",
   "module": "dist/index.js",
