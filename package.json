@@ -2,6 +2,10 @@
   "name": "outside-click-element",
   "version": "1.0.5",
   "description": "A simple utility to detect clicks outside of an element",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sa02045/outside-click-element.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "type": "module",
