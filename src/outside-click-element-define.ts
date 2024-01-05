@@ -18,7 +18,9 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       ['outside-click']: JSXBase['div'] &
-        Partial<Omit<OutsideClickElement, keyof HTMLElement>>;
+        Partial<Omit<OutsideClickElement, keyof HTMLElement>> & {
+          onOutsideClick?: () => void;
+        };
     }
   }
 }
