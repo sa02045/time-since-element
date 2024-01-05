@@ -38,14 +38,5 @@ try {
   }
 }
 
-declare global {
-  interface Window {
-    OutsideClickElement: typeof OutsideClickElement;
-  }
-  interface HTMLElementTagNameMap {
-    'outside-click': OutsideClickElement;
-  }
-}
-
 export default OutsideClickElement;
 export * from './outside-click-element.js';
