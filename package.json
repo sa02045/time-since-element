@@ -1,7 +1,7 @@
 {
-  "name": "since-programming",
+  "name": "time-since-element",
   "version": "0.0.1",
-  "description": "t",
+  "description": "A simple web component that displays the time since a given date",
   "repository": {
     "type": "git",
     "url": ""
@@ -12,7 +12,6 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "index.css",
     "index.d.ts"
   ],
   "exports": {
@@ -35,7 +34,7 @@
     "web-components"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.9.9",
     "@open-wc/testing": "^4.0.0",
