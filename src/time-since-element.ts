@@ -1,7 +1,7 @@
 type Format = 'days' | 'months' | 'years' | 'full';
 
-export class TimeSinceELement extends HTMLElement {
-  static define(tag = 'time-since', registry = customElements) {
+export class TimeSinceElement extends HTMLElement {
+  static define(tag = 'time-since-element', registry = customElements) {
     registry.define(tag, this);
     return this;
   }
@@ -44,7 +44,7 @@ export class TimeSinceELement extends HTMLElement {
     }
 
     if (format === 'months') {
-      return Math.floor(days / 30) + '';
+      return `${Math.floor(days / 30)}`;
     }
 
     if (format === 'years') {

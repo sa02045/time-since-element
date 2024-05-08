@@ -1,6 +1,6 @@
-import { TimeSinceELement } from './time-since.js';
+import { TimeSinceElement } from './time-since-element';
 
-export { TimeSinceELement };
-export default TimeSinceELement;
+export { TimeSinceElement };
+export default TimeSinceElement;
 
-export * from './time-since-define.js';
+export * from './time-since-element-define';

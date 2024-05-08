@@ -5,5 +5,9 @@
     "plugin:github/recommended",
     "plugin:github/typescript",
     "plugin:custom-elements/recommended"
-  ]
+  ],
+  "rules": {
+    "custom-elements/define-tag-after-class-definition": "off",
+    "custom-elements/expose-class-on-global": "off"
+  }
 }
