@@ -1,6 +1,6 @@
-import { OutsideClickElement } from './outside-click-element.js';
+import { TimeSinceELement } from './time-since.js';
 
-export { OutsideClickElement };
-export default OutsideClickElement;
+export { TimeSinceELement };
+export default TimeSinceELement;
 
-export * from './outside-click-element-define.js';
+export * from './time-since-define.js';

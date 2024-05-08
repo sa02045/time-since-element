@@ -1,10 +1,10 @@
 {
-  "name": "outside-click-element",
-  "version": "1.0.6",
-  "description": "A simple utility to detect clicks outside of an element",
+  "name": "since-programming",
+  "version": "0.0.1",
+  "description": "t",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sa02045/outside-click-element.git"
+    "url": ""
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -16,44 +16,42 @@
     "index.d.ts"
   ],
   "exports": {
-    ".": "./dist/index.js",
-    "./define": "./dist/index.js",
-    "./outside-click": "./dist/outside-click-element.js",
-    "./outside-click/define": "./dist/outside-click-element-define.js"
+    ".": "./dist/index.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
     "lint": "eslint . --ext .js,.ts && tsc --noEmit",
-    "lint:fix": "npm run lint -- --fix",
-    "prebuild": "npm run clean && npm run lint && mkdir dist",
-    "bundle": "esbuild --bundle dist/index.js --keep-names --outfile=dist/bundle.js --format=esm",
-    "build": "tsc && npm run bundle && npm run manifest",
+    "lint:fix": "pnpm run lint -- --fix",
+    "prebuild": "pnpm run clean && pnpm run lint && mkdir dist",
+    "bundle": "tsup",
+    "build": "pnpm run bundle && pnpm run manifest",
     "test": "web-test-runner",
-    "prepublishOnly": "npm run build",
-    "pretest": "npm run build",
-    "manifest": "custom-elements-manifest analyze"
+    "prepublishOnly": "pnpm run build",
+    "pretest": "pnpm run build",
+    "manifest": "custom-elements-manifest analyze",
+    "start": "pnpm run build && http-server -p 8080"
   },
   "keywords": [
-    "web-components",
-    "out-side-click"
+    "web-components"
   ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "@custom-elements-manifest/analyzer": "^0.9.9",
     "@open-wc/testing": "^4.0.0",
-    "@web/dev-server-esbuild": "^1.0.1",
-    "@web/test-runner": "^0.18.0",
+    "@web/dev-server-esbuild": "^1.0.2",
+    "@web/test-runner": "^0.18.1",
     "@web/test-runner-playwright": "^0.11.0",
-    "custom-elements-manifest": "^2.0.0",
-    "esbuild": "^0.19.11",
-    "eslint": "^8.56.0",
+    "custom-elements-manifest": "^2.1.0",
+    "eslint": "^8.57.0",
     "eslint-plugin-custom-elements": "^0.0.8",
-    "eslint-plugin-github": "^4.10.1",
-    "playwright": "^1.40.1",
-    "prettier": "^3.1.1",
-    "sinon": "^17.0.1",
-    "typescript": "^5.3.3"
+    "eslint-plugin-github": "^4.10.2",
+    "http-server": "^14.1.1",
+    "playwright": "^1.44.0",
+    "prettier": "^3.2.5",
+    "sinon": "^17.0.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
   },
   "customElements": "custom-elements.json"
 }

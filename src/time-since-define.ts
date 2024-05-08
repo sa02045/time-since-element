@@ -1,4 +1,4 @@
-import { OutsideClickElement } from './outside-click-element.js';
+import { TimeSinceELement } from './time-since.js';
 
 const root = (
   typeof globalThis !== 'undefined' ? globalThis : window
@@ -10,23 +10,20 @@ type JSXBase = JSX.IntrinsicElements extends { div: unknown }
 
 declare global {
   interface Window {
-    OutsideClickElement: typeof OutsideClickElement;
+    TimeSinceELement: typeof TimeSinceELement;
   }
   interface HTMLElementTagNameMap {
-    'outside-click': OutsideClickElement;
+    'programming-since': TimeSinceELement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      ['outside-click']: JSXBase['div'] &
-        Partial<Omit<OutsideClickElement, keyof HTMLElement>> & {
-          onOutsideClick?: () => void;
-        };
+      ['programming-since']: JSXBase['div'];
     }
   }
 }
 
 try {
-  root.OutsideClickElement = OutsideClickElement.define();
+  root.TimeSinceELement = TimeSinceELement.define();
 } catch (e: unknown) {
   if (
     !(
@@ -40,5 +37,5 @@ try {
   }
 }
 
-export default OutsideClickElement;
-export * from './outside-click-element.js';
+export default TimeSinceELement;
+export * from './time-since.js';

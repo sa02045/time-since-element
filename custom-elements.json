@@ -4,147 +4,34 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "dist/bundle.js",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "OutsideClickElement",
-          "default": "class extends HTMLElement {\n  static"
-        },
-        {
-          "kind": "variable",
-          "name": "dist_default",
-          "default": "OutsideClickElement"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "OutsideClickElement",
-          "declaration": {
-            "name": "OutsideClickElement",
-            "module": "dist/bundle.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "dist_default",
-            "module": "dist/bundle.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "dist/index.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "OutsideClickElement",
-          "declaration": {
-            "name": "OutsideClickElement",
-            "module": "dist/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "OutsideClickElement",
-            "module": "dist/index.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./outside-click-element-define.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/outside-click-element-define.js",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "OutsideClickElement",
-            "module": "dist/outside-click-element-define.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./outside-click-element.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "dist/outside-click-element.js",
       "declarations": [
         {
-          "kind": "class",
-          "description": "",
-          "name": "OutsideClickElement",
-          "members": [
-            {
-              "kind": "method",
-              "name": "define",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "tag",
-                  "default": "'outside-click'"
-                },
-                {
-                  "name": "registry",
-                  "default": "customElements"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "handleOutsideClick",
-              "parameters": [
-                {
-                  "name": "event"
-                }
-              ]
-            }
-          ],
-          "events": [
-            {
-              "name": "outside-click",
-              "type": {
-                "text": "Event"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "HTMLElement"
-          },
-          "customElement": true
+          "kind": "variable",
+          "name": "TimeSinceELement",
+          "default": "class extends HTMLElement {\n  constructor() {\n    super(...arguments);\n    __privateAdd(this, _renderRoot, this.shadowRoot ? this.shadowRoot : this.attachShadow ? this.attachShadow({ mode: \"open\" }) : this);\n  }\n  static define(tag = \"time-since\", registry = customElements) {\n    registry.define(tag, this);\n    return this;\n  }\n  connectedCallback() {\n    this.update();\n  }\n  update() {\n    const since = this.formatSince(\n      this.calculateDaysSince(this.getSinceAttribute()),\n      this.getFormat()\n    );\n    __privateGet(this, _renderRoot).textContent = since;\n  }\n  getSinceAttribute() {\n    return this.getAttribute(\"since\") || \"\";\n  }\n  getFormat() {\n    return this.getAttribute(\"format\") || \"full\";\n  }\n  calculateDaysSince(since) {\n    const sinceDate = new Date(since);\n    const today = /* @__PURE__ */ new Date();\n    const diff = today.getTime() - sinceDate.getTime();\n    return Math.floor(diff / (1e3 * 60 * 60 * 24));\n  }\n  formatSince(days, format) {\n    const years = Math.floor(days / 365);\n    const months = Math.floor(days % 365 / 30);\n    const remainDays = days % 30;\n    if (format === \"days\") {\n      return `${days}`;\n    }\n    if (format === \"months\") {\n      return Math.floor(days / 30) + \"\";\n    }\n    if (format === \"years\") {\n      return `${years}.${months > 0 ? months : \"\"}`;\n    }\n    if (format === \"full\") {\n      if (months === 0) {\n        return `${years}\\uB144 ${remainDays}\\uC77C`;\n      } else {\n        return `${years}\\uB144 ${months}\\uAC1C\\uC6D4 ${remainDays}\\uC77C`;\n      }\n    }\n    return \"\";\n  }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "src_default",
+          "default": "TimeSinceELement"
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "OutsideClickElement",
+          "name": "TimeSinceELement",
           "declaration": {
-            "name": "OutsideClickElement",
-            "module": "dist/outside-click-element.js"
+            "name": "TimeSinceELement",
+            "module": "dist/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "src_default",
+            "module": "dist/index.js"
           }
         }
       ]
@@ -156,9 +43,9 @@
       "exports": [
         {
           "kind": "js",
-          "name": "OutsideClickElement",
+          "name": "TimeSinceELement",
           "declaration": {
-            "name": "OutsideClickElement",
+            "name": "TimeSinceELement",
             "module": "src/index.ts"
           }
         },
@@ -166,7 +53,7 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "OutsideClickElement",
+            "name": "TimeSinceELement",
             "module": "src/index.ts"
           }
         },
@@ -175,22 +62,22 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./outside-click-element-define.js"
+            "package": "./time-since-define.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/outside-click-element-define.ts",
+      "path": "src/time-since-define.ts",
       "declarations": [],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "OutsideClickElement",
-            "module": "src/outside-click-element-define.ts"
+            "name": "TimeSinceELement",
+            "module": "src/time-since-define.ts"
           }
         },
         {
@@ -198,19 +85,19 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./outside-click-element.js"
+            "package": "./time-since.js"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/outside-click-element.ts",
+      "path": "src/time-since.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "OutsideClickElement",
+          "name": "TimeSinceELement",
           "members": [
             {
               "kind": "method",
@@ -219,7 +106,7 @@
               "parameters": [
                 {
                   "name": "tag",
-                  "default": "'outside-click'"
+                  "default": "'time-since'"
                 },
                 {
                   "name": "registry",
@@ -229,22 +116,62 @@
             },
             {
               "kind": "method",
-              "name": "handleOutsideClick",
+              "name": "update"
+            },
+            {
+              "kind": "method",
+              "name": "getSinceAttribute"
+            },
+            {
+              "kind": "method",
+              "name": "getFormat"
+            },
+            {
+              "kind": "method",
+              "name": "calculateDaysSince",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              },
               "parameters": [
                 {
-                  "name": "event",
+                  "name": "since",
                   "type": {
-                    "text": "MouseEvent"
+                    "text": "string"
                   }
                 }
               ]
-            }
-          ],
-          "events": [
+            },
             {
-              "name": "outside-click",
+              "kind": "method",
+              "name": "formatSince",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "days",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "format",
+                  "type": {
+                    "text": "Format"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "#renderRoot",
+              "privacy": "private",
               "type": {
-                "text": "Event"
+                "text": "Node"
               }
             }
           ],
@@ -257,10 +184,10 @@
       "exports": [
         {
           "kind": "js",
-          "name": "OutsideClickElement",
+          "name": "TimeSinceELement",
           "declaration": {
-            "name": "OutsideClickElement",
-            "module": "src/outside-click-element.ts"
+            "name": "TimeSinceELement",
+            "module": "src/time-since.ts"
           }
         }
       ]
