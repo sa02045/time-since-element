@@ -4,4 +4,5 @@ export default defineConfig({
   entryPoints: ['./src/index.ts'],
   format: ['esm'],
   outDir: './dist',
+  dts: true,
 });
